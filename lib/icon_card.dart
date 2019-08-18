@@ -21,7 +21,7 @@ class IconCard extends StatelessWidget {
         ),
         Text(
           gender,
-          style: Style.textSecondary,
+          style: Style.textDefault,
         ),
       ],
     );

@@ -22,6 +22,7 @@ class _InputPageState extends State<InputPage> {
       appBar: AppBar(
         title: Text(
           'BMI CALCULATOR',
+          style: Style.navBarTitle,
         ),
       ),
       body: Column(
