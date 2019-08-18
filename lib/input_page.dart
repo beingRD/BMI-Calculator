@@ -16,6 +16,7 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender genderType;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,7 +63,6 @@ class _InputPageState extends State<InputPage> {
                       icon: FontAwesomeIcons.venus,
                     ),
                   ),
-                  // ),
                 ),
               ],
             ),
@@ -83,7 +83,7 @@ class _InputPageState extends State<InputPage> {
                     textBaseline: TextBaseline.alphabetic,
                     children: [
                       Text(
-                        '180',
+                        Style.height.toString(),
                         style: Style.textLarge,
                       ),
                       Text(
@@ -91,6 +91,30 @@ class _InputPageState extends State<InputPage> {
                         style: Style.textBase,
                       ),
                     ],
+                  ),
+                  SliderTheme(
+                    data: SliderTheme.of(context).copyWith(
+                      activeTrackColor: Style.white,
+                      inactiveTrackColor: Style.defaultColor,
+                      thumbColor: Style.accentColor,
+                      overlayColor: Style.transAccentColor,
+                      thumbShape: RoundSliderThumbShape(
+                        enabledThumbRadius: 15.0,
+                      ),
+                      overlayShape: RoundSliderOverlayShape(
+                        overlayRadius: 30.0,
+                      ),
+                    ),
+                    child: Slider(
+                      value: Style.height.toDouble(),
+                      min: Style.minHeight,
+                      max: Style.maxHeight,
+                      onChanged: (double newValue) {
+                        setState(() {
+                          Style.height = newValue.round();
+                        });
+                      },
+                    ),
                   ),
                 ],
               ),
@@ -102,6 +126,18 @@ class _InputPageState extends State<InputPage> {
                 Expanded(
                   child: ReusableCard(
                     colour: Style.activeCardColor,
+                    childCard: Column(
+                      children: [
+                        Text(
+                          'WEIGHT',
+                          style: Style.textDefault,
+                        ),
+                        Text(
+                          Style.weight.toString(),
+                          style: Style.textLarge,
+                        )
+                      ],
+                    ),
                   ),
                 ),
                 Expanded(

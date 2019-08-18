@@ -5,13 +5,19 @@ class Style {
   static final Color activeCardColor = Color(0xFF1D1F33);
   static final Color inactiveCardColor = Color(0xFF101427);
   static final Color accentColor = Color(0xFFEA1555);
-  static final Color _textDefaultColor = Color(0xFF8D8E98);
-  static final Color _textLargeColor = Colors.white;
+  static final Color transAccentColor = Color(0x29EA1555);
+  static final Color defaultColor = Color(0xFF8D8E98);
+  static final Color white = Colors.white;
 
   static Color maleCardColor = inactiveCardColor;
   static Color femaleCardColor = inactiveCardColor;
 
   static const bottomContainerHeight = 80.0;
+  static const minHeight = 120.0;
+  static const maxHeight = 220.0;
+  static int height = 180;
+  static int weight = 50;
+
   static const _iconSize = 80.0;
   static const _defaultFontSize = 18.0;
   static const _largeFontSize = 50.0;
@@ -26,19 +32,18 @@ class Style {
 
   static final textDefault = TextStyle(
     fontSize: _defaultFontSize,
-    color: _textDefaultColor,
-    
+    color: defaultColor,
   );
 
   static final textBase = TextStyle(
     fontSize: _defaultFontSize,
-    color: _textDefaultColor,
+    color: defaultColor,
     textBaseline: TextBaseline.ideographic,
   );
 
   static final textLarge = TextStyle(
     fontSize: _largeFontSize,
-    color: _textLargeColor,
+    color: white,
     fontWeight: FontWeight.w900,
   );
 
