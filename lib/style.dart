@@ -27,11 +27,13 @@ class Style {
   static final textDefault = TextStyle(
     fontSize: _defaultFontSize,
     color: _textDefaultColor,
+    
   );
 
   static final textLarge = TextStyle(
     fontSize: _largeFontSize,
     color: _textLargeColor,
+    fontWeight: FontWeight.w900,
   );
 
   static defaultIconSize() {

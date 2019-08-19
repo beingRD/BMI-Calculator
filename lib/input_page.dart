@@ -26,6 +26,7 @@ class _InputPageState extends State<InputPage> {
         ),
       ),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Row(
@@ -69,6 +70,27 @@ class _InputPageState extends State<InputPage> {
           Expanded(
             child: ReusableCard(
               colour: Style.activeCardColor,
+              childCard: Column(
+                children: <Widget>[
+                  Text(
+                    'HEIGHT',
+                    style: Style.textDefault,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text(
+                        '180',
+                        style: Style.textLarge,
+                      ),
+                      Text(
+                        'cm',
+                        style: Style.textDefault,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
           Expanded(
