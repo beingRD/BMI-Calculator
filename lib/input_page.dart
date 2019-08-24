@@ -71,21 +71,24 @@ class _InputPageState extends State<InputPage> {
             child: ReusableCard(
               colour: Style.activeCardColor,
               childCard: Column(
-                children: <Widget>[
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
                   Text(
                     'HEIGHT',
                     style: Style.textDefault,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
+                    crossAxisAlignment: CrossAxisAlignment.baseline,
+                    textBaseline: TextBaseline.alphabetic,
+                    children: [
                       Text(
                         '180',
                         style: Style.textLarge,
                       ),
                       Text(
                         'cm',
-                        style: Style.textDefault,
+                        style: Style.textBase,
                       ),
                     ],
                   ),

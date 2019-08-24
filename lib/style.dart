@@ -30,6 +30,12 @@ class Style {
     
   );
 
+  static final textBase = TextStyle(
+    fontSize: _defaultFontSize,
+    color: _textDefaultColor,
+    textBaseline: TextBaseline.ideographic,
+  );
+
   static final textLarge = TextStyle(
     fontSize: _largeFontSize,
     color: _textLargeColor,
