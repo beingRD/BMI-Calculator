@@ -7,6 +7,7 @@ class Style {
   static final Color accentColor = Color(0xFFEA1555);
   static final Color transAccentColor = Color(0x29EA1555);
   static final Color defaultColor = Color(0xFF8D8E98);
+  static final Color buttonColor = Color(0xFF4C4F5E);
   static final Color white = Colors.white;
 
   static Color maleCardColor = inactiveCardColor;
