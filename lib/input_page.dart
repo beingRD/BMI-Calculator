@@ -3,6 +3,7 @@ import 'icon_card.dart';
 import 'reusable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'icon_button.dart';
 
 enum Gender {
   male,
@@ -145,12 +146,22 @@ class _InputPageState extends State<InputPage> {
                           children: <Widget>[
                             RoundIconButton(
                               icon: FontAwesomeIcons.minus,
+                              onPressed: () {
+                                setState(() {
+                                  Style.weight--;
+                                });
+                              },
                             ),
                             SizedBox(
                               width: 10.0,
                             ),
                             RoundIconButton(
                               icon: FontAwesomeIcons.plus,
+                              onPressed: () {
+                                setState(() {
+                                  Style.weight++;
+                                });
+                              },
                             )
                           ],
                         ),
@@ -175,27 +186,6 @@ class _InputPageState extends State<InputPage> {
           ),
         ],
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({this.icon});
-
-  final IconData icon;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      shape: CircleBorder(),
-      elevation: 6.0,
-      fillColor: Style.buttonColor,
-      onPressed: () {},
     );
   }
 }
