@@ -18,6 +18,7 @@ class Style {
   static const maxHeight = 220.0;
   static int height = 180;
   static int weight = 50;
+  static int age = 18;
 
   static const _iconSize = 80.0;
   static const _defaultFontSize = 18.0;
