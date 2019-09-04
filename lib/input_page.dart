@@ -1,3 +1,5 @@
+import 'package:bmicalc/result_page.dart';
+
 import 'style.dart';
 import 'icon_card.dart';
 import 'reusable_card.dart';
@@ -24,7 +26,7 @@ class _InputPageState extends State<InputPage> {
       appBar: AppBar(
         title: Text(
           'BMI CALCULATOR',
-          style: Style.navBarTitle,
+          style: Style.textMedium,
         ),
       ),
       body: Column(
@@ -217,11 +219,30 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          Container(
-            width: double.infinity,
-            height: Style.bottomContainerHeight,
-            decoration: BoxDecoration(
-              color: Style.accentColor,
+          GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ResultPage(),
+                ),
+              );
+            },
+            child: Container(
+              width: double.infinity,
+              height: Style.bottomContainerHeight,
+              padding: EdgeInsets.only(
+                bottom: 20.0,
+              ),
+              child: Center(
+                child: Text(
+                  'CALCULATE YOUR BMI',
+                  style: Style.textMedium,
+                ),
+              ),
+              decoration: BoxDecoration(
+                color: Style.accentColor,
+              ),
             ),
           ),
         ],
