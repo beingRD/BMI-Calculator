@@ -4,6 +4,15 @@ import 'package:bmicalc/components/reusable_card.dart';
 import 'package:bmicalc/components/bottom_button.dart';
 
 class ResultPage extends StatelessWidget {
+  ResultPage(
+      {@required this.userResult,
+      @required this.userBMI,
+      @required this.userInterpretation});
+
+  final String userResult;
+  final String userBMI;
+  final String userInterpretation;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -12,9 +21,12 @@ class ResultPage extends StatelessWidget {
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Container(
+              padding: EdgeInsets.all(15.0),
+              alignment: Alignment.bottomLeft,
               child: Text(
                 'Your Result',
                 style: Style.textLarge,
@@ -30,12 +42,12 @@ class ResultPage extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
-                    'NORMAL',
+                    userResult,
                     textAlign: TextAlign.center,
                     style: Style.greenText,
                   ),
                   Text(
-                    Style.bmi.toString(),
+                    userBMI,
                     textAlign: TextAlign.center,
                     style: Style.textXLarge,
                   ),
@@ -54,7 +66,7 @@ class ResultPage extends StatelessWidget {
                     ],
                   ),
                   Text(
-                    'You have a Normal body weight. Good Job!',
+                    userInterpretation,
                     textAlign: TextAlign.center,
                     style: Style.textMedium,
                   ),

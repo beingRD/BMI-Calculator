@@ -1,3 +1,4 @@
+import 'package:bmicalc/bmi_brain.dart';
 import 'package:bmicalc/style.dart';
 import 'package:flutter/material.dart';
 import 'package:bmicalc/screens/result_page.dart';
@@ -221,10 +222,18 @@ class _InputPageState extends State<InputPage> {
           BottomButton(
               title: 'CALCULATE YOUR BMI',
               onTap: () {
+                BrainBMI calc =
+                    BrainBMI(height: Style.height, weight: Style.weight);
+                print(Style.height.toString());
+                print(Style.weight.toString());
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ResultPage(),
+                    builder: (context) => ResultPage(
+                      userBMI: calc.calculateBMI(),
+                      userResult: calc.getResult(),
+                      userInterpretation: calc.getInterpretation(),
+                    ),
                   ),
                 );
               }),
