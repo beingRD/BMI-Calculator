@@ -20,11 +20,14 @@ class Style {
   static int height = 180;
   static int weight = 50;
   static int age = 18;
-  static int bmi;
+  static double bmi = 19.9;
 
   static const _iconSize = 80.0;
   static const _defaultFontSize = 18.0;
+  static const _default2FontSize = 21.0;
+
   static const _largeFontSize = 50.0;
+  static const _xLargeFontSize = 100.0;
 
   static const _margin = 15.0;
 
@@ -39,6 +42,10 @@ class Style {
     color: defaultColor,
   );
 
+  static final textDefault2 = Style.textLarge.copyWith(
+    fontSize: _default2FontSize,
+  );
+
   static final textBase = TextStyle(
     fontSize: _defaultFontSize,
     color: defaultColor,
@@ -51,8 +58,12 @@ class Style {
     fontWeight: FontWeight.w900,
   );
 
+  static final textXLarge = Style.textLarge.copyWith(
+    fontSize: _xLargeFontSize,
+  );
+
   static final textMedium = Style.textDefault.copyWith(
-    fontSize: 18.0,
+    fontSize: 22.0,
     color: Style.white,
     letterSpacing: 2.0,
     fontWeight: FontWeight.bold,

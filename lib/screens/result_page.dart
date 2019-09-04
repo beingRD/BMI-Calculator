@@ -1,6 +1,7 @@
+import 'package:bmicalc/style.dart';
 import 'package:flutter/material.dart';
-import 'reusable_card.dart';
-import 'style.dart';
+import 'package:bmicalc/components/reusable_card.dart';
+import 'package:bmicalc/components/bottom_button.dart';
 
 class ResultPage extends StatelessWidget {
   @override
@@ -25,52 +26,47 @@ class ResultPage extends StatelessWidget {
             child: ReusableCard(
               colour: Style.activeCardColor,
               childCard: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   Text(
                     'NORMAL',
+                    textAlign: TextAlign.center,
                     style: Style.greenText,
                   ),
                   Text(
                     Style.bmi.toString(),
-                    style: Style.textLarge,
+                    textAlign: TextAlign.center,
+                    style: Style.textXLarge,
+                  ),
+                  Column(
+                    children: [
+                      Text(
+                        'Normal BMI range:',
+                        textAlign: TextAlign.center,
+                        style: Style.textDefault,
+                      ),
+                      Text(
+                        '18,5 - 25 kg/m2',
+                        textAlign: TextAlign.center,
+                        style: Style.textMedium,
+                      ),
+                    ],
                   ),
                   Text(
-                    'Normal BMI range:',
-                    style: Style.textDefault,
-                  ),
-                  Text(
-                    '18,5 - 25 kg/m2',
-                    style: Style.textMedium,
-                  ),
-                  Text(
-                    'Comment!',
+                    'You have a Normal body weight. Good Job!',
+                    textAlign: TextAlign.center,
                     style: Style.textMedium,
                   ),
                 ],
               ),
             ),
           ),
-          GestureDetector(
+          BottomButton(
+            title: 'RE-CALCULATE YOUR BMI',
             onTap: () {
               Navigator.pop(context);
             },
-            child: Container(
-              width: double.infinity,
-              height: Style.bottomContainerHeight,
-              padding: EdgeInsets.only(
-                bottom: 20.0,
-              ),
-              child: Center(
-                child: Text(
-                  'RE-CALCULATE YOUR BMI',
-                  style: Style.textMedium,
-                ),
-              ),
-              decoration: BoxDecoration(
-                color: Style.accentColor,
-              ),
-            ),
           ),
         ],
       ),

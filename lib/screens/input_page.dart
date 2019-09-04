@@ -1,11 +1,10 @@
-import 'package:bmicalc/result_page.dart';
-
-import 'style.dart';
-import 'icon_card.dart';
-import 'reusable_card.dart';
+import 'package:bmicalc/style.dart';
 import 'package:flutter/material.dart';
+import 'package:bmicalc/screens/result_page.dart';
+import 'package:bmicalc/components/icon_card.dart';
+import 'package:bmicalc/components/icon_button.dart';
+import 'package:bmicalc/components/reusable_card.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'icon_button.dart';
 
 enum Gender {
   male,
@@ -219,33 +218,47 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ResultPage(),
-                ),
-              );
-            },
-            child: Container(
-              width: double.infinity,
-              height: Style.bottomContainerHeight,
-              padding: EdgeInsets.only(
-                bottom: 20.0,
-              ),
-              child: Center(
-                child: Text(
-                  'CALCULATE YOUR BMI',
-                  style: Style.textMedium,
-                ),
-              ),
-              decoration: BoxDecoration(
-                color: Style.accentColor,
-              ),
-            ),
-          ),
+          BottomButton(
+              title: 'CALCULATE YOUR BMI',
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => ResultPage(),
+                  ),
+                );
+              }),
         ],
+      ),
+    );
+  }
+}
+
+class BottomButton extends StatelessWidget {
+  BottomButton({@required this.title, @required this.onTap});
+
+  final Function onTap;
+  final String title;
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: double.infinity,
+        height: Style.bottomContainerHeight,
+        padding: EdgeInsets.only(
+          bottom: 20.0,
+        ),
+        child: Center(
+          child: Text(
+            title,
+            style: Style.textMedium,
+          ),
+        ),
+        decoration: BoxDecoration(
+          color: Style.accentColor,
+        ),
       ),
     );
   }

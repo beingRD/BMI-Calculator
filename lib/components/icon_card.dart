@@ -1,5 +1,5 @@
+import 'package:bmicalc/style.dart';
 import 'package:flutter/material.dart';
-import 'style.dart';
 
 class IconCard extends StatelessWidget {
   final String gender;
